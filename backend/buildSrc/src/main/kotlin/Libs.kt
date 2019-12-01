@@ -15,7 +15,6 @@ object Libs {
     val graphQlJava = "com.graphql-java:graphql-java:13.0"
     val loggerSimple = "org.slf4j:slf4j-simple:1.7.29"
 
-    val sqlite = "org.xerial:sqlite-jdbc:3.28.0"
     val mysql = "mysql:mysql-connector-java:8.0.18"
     val exposed = "org.jetbrains.exposed:exposed:0.17.7"
 
