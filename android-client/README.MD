@@ -1,6 +1,8 @@
 # Co2monitor Android Application
 
-<img width="270" src="https://github.com/beworker/co2monitor/blob/master/android-client/docs/images/screen-1.png" /> <img width="270" src="https://github.com/beworker/co2monitor/blob/master/android-client/docs/images/screen-2.png" /> <img width="270" src="https://github.com/beworker/co2monitor/blob/master/android-client/docs/images/screen-3.png" /> <img height="270" src="https://github.com/beworker/co2monitor/blob/master/android-client/docs/images/screen-4.png" />
+<img width="280" src="https://github.com/beworker/co2monitor/blob/master/android-client/docs/images/screen-1.png" />&nbsp;&nbsp;<img width="280" src="https://github.com/beworker/co2monitor/blob/master/android-client/docs/images/screen-2.png" />&nbsp;&nbsp;<img width="280" src="https://github.com/beworker/co2monitor/blob/master/android-client/docs/images/screen-3.png" />
+
+<img height="280" src="https://github.com/beworker/co2monitor/blob/master/android-client/docs/images/screen-4.png" />
 
 ## Used technologies
 
