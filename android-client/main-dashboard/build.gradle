@@ -1,0 +1,9 @@
+apply from: '../build-module-android.gradle'
+
+dependencies {
+    api project(":main")
+    api project(":repo-measurement")
+    api project(":commons-network")
+    implementation deps.androidxConstraintLayout
+    implementation deps.knot
+}

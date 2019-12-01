@@ -1,0 +1,22 @@
+scalar DateTime
+
+type Query {
+    current: Measurement
+}
+
+type Measurement {
+    id: Int!
+    time: DateTime!
+    temperature: Int!
+    co2: Int!
+}
+
+type Mutation {
+    createMeasurement(measurement: MeasurementInput!): Measurement!
+}
+
+input MeasurementInput {
+    time: DateTime!
+    temperature: Int!
+    co2: Int!
+}

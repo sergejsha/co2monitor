@@ -1,0 +1,46 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion app.compileSdkVersion
+    defaultConfig {
+        minSdkVersion app.minSdkVersion
+        targetSdkVersion app.targetSdkVersion
+        versionCode app.versionCode
+        versionName app.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = app.targetJvm
+    }
+    libraryVariants.all { variant ->
+        variant.generateBuildConfigProvider.configure {
+            it.enabled = false
+        }
+    }
+}
+
+dependencies {
+    if (project.name != "commons") implementation project(":commons")
+
+    implementation deps.kotlinStdlib
+    implementation deps.googleMaterial
+    implementation deps.androidxAppcompat
+    implementation deps.rxjava2Kotlin
+    implementation deps.rxjava2Android
+    implementation deps.threetenabp
+
+    implementation deps.magnet
+    kapt deps.magnetProcessor
+}

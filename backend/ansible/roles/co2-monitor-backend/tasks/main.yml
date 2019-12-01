@@ -1,0 +1,27 @@
+---
+
+- name: "Install aptitude"
+  apt: pkg=aptitude state=present update_cache=yes
+
+- name: "Install java8"
+  apt: pkg=openjdk-8-jre-headless state=present
+
+- name: "Create {{ co2_backend_home }}"
+  file: path={{ co2_backend_home }} state=directory owner=pi
+
+- name: "Copy {{ co2_backend_jar }}"
+  copy: src=../backend/build/libs/{{ co2_backend_jar }} dest={{ co2_backend_home }}/backend.jar owner=pi mode="u+x"
+
+- name: "Create {{ co2_backend_home }}/data"
+  file: path={{ co2_backend_home }}/data state=directory owner=pi
+
+- name: "Copy data files"
+  copy: src=../data/co2monitor.yml dest={{ co2_backend_home }}/data owner=pi mode="u+rwx"
+
+- name: "Register co2-monitor-backend service"
+  template:
+    src: co2-monitor-backend.service.j2
+    dest: /lib/systemd/system/co2-monitor-backend.service
+
+- name: "Enable and restart co2-monitor-backend service"
+  service: name=co2-monitor-backend daemon_reload=yes state=restarted enabled=yes

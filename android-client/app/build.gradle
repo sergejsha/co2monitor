@@ -1,0 +1,47 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion app.compileSdkVersion
+    defaultConfig {
+        applicationId "de.halfbit.co2monitor"
+        minSdkVersion app.minSdkVersion
+        targetSdkVersion app.targetSdkVersion
+        versionCode app.versionCode
+        versionName app.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/**.kotlin_module'
+        exclude 'META-INF/**.version'
+        exclude 'kotlin/**'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = app.targetJvm
+    }
+}
+
+dependencies {
+    implementation deps.kotlinStdlib
+    implementation deps.magnet
+    kapt deps.magnetProcessor
+
+    // assemble all feature modules here
+    implementation project(':main-dashboard')
+    implementation project(':repo-measurement-graphql')
+
+    // assemble all application extensions here
+    implementation deps.magnetxRxJava2Android
+    implementation deps.rxjava2Android
+}

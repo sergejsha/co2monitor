@@ -1,0 +1,23 @@
+<resources>
+
+    <style name="AppTypography" />
+
+    <style name="AppTypography.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="fontFamily">sans-serif-light</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textSize">40sp</item>
+    </style>
+
+    <style name="AppTypography.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="fontFamily">sans-serif-light</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="AppTypography.Headline5" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="fontFamily">sans-serif-light</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textSize">19sp</item>
+    </style>
+
+</resources>

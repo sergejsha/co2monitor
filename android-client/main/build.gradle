@@ -1,0 +1,6 @@
+apply from: '../build-module-android.gradle'
+
+dependencies {
+    implementation deps.magnetxApp
+    implementation deps.androidxLifecycleViewModel
+}

@@ -1,0 +1,33 @@
+---
+
+- name: Install Libraries
+  apt: 
+    name: ['python-pip', 'python-dev']
+    state: present
+
+- pip:
+    name: 
+      - requests
+      - pyyaml
+
+- name: Create {{ co2_home_directory }}
+  file: path={{ co2_home_directory }} state=directory owner=pi
+
+- name: Copy monitor.py to raspberry pi
+  copy: src=../monitor.py dest={{ co2_home_directory }}/monitor.py owner=pi mode="u+x"
+
+- name: Copy publish.py to raspberry pi
+  copy: src=../publisher.py dest={{ co2_home_directory }}/publisher.py owner=pi mode="u+x"
+
+- name: Copy script configuration
+  template:
+    src: config.yml.j2
+    dest: "{{ co2_home_directory }}/config.yml"
+
+- name: Register co2-monitor service
+  template:
+    src: co2-monitor.service.j2
+    dest: /lib/systemd/system/co2-monitor.service
+
+- name: Enable and restart co2-monitor service
+  service: name=co2-monitor daemon_reload=yes state=restarted enabled=yes

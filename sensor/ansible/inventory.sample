@@ -1,0 +1,2 @@
+[servers]
+raspberrypi ansible_host=192.168.178.28 ansible_user=pi

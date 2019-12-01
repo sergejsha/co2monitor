@@ -1,0 +1,8 @@
+rootProject.name = 'co2monitor'
+include ':app',
+        ':commons',
+        ':commons-network',
+        ':main',
+        ':main-dashboard',
+        ':repo-measurement',
+        ':repo-measurement-graphql'

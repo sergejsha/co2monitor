@@ -1,0 +1,6 @@
+<resources>
+
+    <style name="AppTheme.Activity" parent="AppTheme.Light">
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>

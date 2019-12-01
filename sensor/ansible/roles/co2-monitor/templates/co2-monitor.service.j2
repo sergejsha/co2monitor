@@ -1,0 +1,14 @@
+[Unit]
+Description=co2-monitor-service app
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python2 {{ co2_home_directory }}/monitor.py /dev/hidraw0
+WorkingDirectory={{ co2_home_directory }}
+StandardOutput=syslog
+StandardError=syslog
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target

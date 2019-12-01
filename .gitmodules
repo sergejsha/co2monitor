@@ -1,0 +1,3 @@
+[submodule "backend/ansible/roles/mysql"]
+	path = backend/ansible/roles/mysql
+	url = git@github.com:geerlingguy/ansible-role-mysql.git

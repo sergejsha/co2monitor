@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="colorLevel0" format="color" />
+    <attr name="colorLevel1" format="color" />
+    <attr name="colorLevel2" format="color" />
+    <attr name="colorLevel3" format="color" />
+    <attr name="colorLevel4" format="color" />
+</resources>

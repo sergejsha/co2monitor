@@ -1,0 +1,4 @@
+---
+
+co2_home_directory: /home/pi/co2-monitor
+publish_server_url: http://192.168.178.28:8081/graphql

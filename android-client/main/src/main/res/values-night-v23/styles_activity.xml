@@ -1,0 +1,6 @@
+<resources>
+
+    <style name="AppTheme.Activity" parent="AppTheme.Dark">
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>

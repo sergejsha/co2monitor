@@ -1,0 +1,3 @@
+rootProject.name = 'co2monitor-backend'
+
+include 'backend'

@@ -1,0 +1,14 @@
+[Unit]
+Description=co2-monitor-backend service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/java -jar {{ co2_backend_home }}/backend.jar -Xmx196m -Xms128m
+WorkingDirectory={{ co2_backend_home }}
+StandardOutput=syslog
+StandardError=syslog
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target

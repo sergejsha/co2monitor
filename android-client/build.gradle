@@ -1,0 +1,80 @@
+buildscript {
+    ext.kotlin_version = '1.3.61'
+
+    ext {
+        kotlin_version = '1.3.61'
+        android_build_version = '3.5.2'
+
+        androidx_appcompat_version = '1.1.0'
+        androidx_constraintlayout_version = '2.0.0-beta2'
+        androidx_recycler_version = '1.1.0'
+        androidx_lifecycle_version = '2.2.0-rc02'
+
+        rxjava2_version = '2.2.14'
+        rxjava2_kotlin_version = '2.4.0'
+        rxjava2_android_version = '2.1.1'
+
+        google_material_version = '1.1.0-beta02'
+        magnet_version = '3.3-rc8'
+        knot_version = '1.8.0-rc1'
+        apollo_graphql_version = "1.2.1"
+        okhttp_version = "4.2.1"
+        threetenabp_version = "1.2.1"
+    }
+
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath "com.android.tools.build:gradle:$android_build_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.apollographql.apollo:apollo-gradle-plugin:$apollo_graphql_version"
+    }
+}
+
+ext {
+    app = [:]
+    app.minSdkVersion = 21
+    app.targetSdkVersion = 29
+    app.compileSdkVersion = 29
+    app.versionCode = 1
+    app.versionName = '1.0'
+    app.targetJvm = '1.8'
+
+    deps = [:]
+    deps.kotlinStdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    deps.googleMaterial = "com.google.android.material:material:$google_material_version"
+    deps.apolloRuntime = "com.apollographql.apollo:apollo-runtime:$apollo_graphql_version"
+    deps.threetenabp = "com.jakewharton.threetenabp:threetenabp:$threetenabp_version"
+    deps.okhttp = "com.squareup.okhttp3:okhttp:$okhttp_version"
+    deps.knot = "de.halfbit:knot:$knot_version"
+
+    deps.magnetxApp = "de.halfbit:magnetx-app:$magnet_version"
+    deps.magnetxRxJava2Android = "de.halfbit:magnetx-app-rxandroid:$magnet_version"
+    deps.magnet = "de.halfbit:magnet-kotlin:$magnet_version"
+    deps.magnetProcessor = "de.halfbit:magnet-processor:$magnet_version"
+
+    deps.androidxAppcompat = "androidx.appcompat:appcompat:$androidx_appcompat_version"
+    deps.androidxConstraintLayout = "androidx.constraintlayout:constraintlayout:$androidx_constraintlayout_version"
+    deps.androidxRecycler = "androidx.recyclerview:recyclerview:$androidx_recycler_version"
+    deps.androidxLifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel:$androidx_lifecycle_version"
+
+    deps.rxjava2 = "io.reactivex.rxjava2:rxjava:$rxjava2_version"
+    deps.rxjava2Kotlin = "io.reactivex.rxjava2:rxkotlin:$rxjava2_kotlin_version"
+    deps.rxjava2Android = "io.reactivex.rxjava2:rxandroid:$rxjava2_android_version"
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        mavenLocal()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
