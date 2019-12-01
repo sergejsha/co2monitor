@@ -35,7 +35,6 @@ internal class DefaultDashboardViewBinder(
                     else -> Co2Level.Acceptable
                 }
             }
-            .distinctUntilChanged()
             .into(view.co2Level, disposables)
 
         viewModel.state
@@ -68,7 +67,6 @@ internal class DefaultDashboardViewBinder(
                     else -> TemperatureLevel.Good
                 }
             }
-            .distinctUntilChanged()
             .into(view.temperatureLevel, disposables)
 
         viewModel.state
