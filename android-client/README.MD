@@ -1,7 +1,8 @@
 # Co2monitor Android Application
 
-## User libraries and technics
+## User libraries and technologies
 
+* Kotlin
 * Multi-modules project
 * [Edge-to-edge content and gesture navigation](https://developer.android.com/guide/navigation/gesturenav)
 * [Dark and Light themes](https://developer.android.com/guide/topics/ui/look-and-feel/darktheme)
