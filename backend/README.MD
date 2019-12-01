@@ -1,6 +1,6 @@
 # Co2Monitor backend server
 
-## Used technologies
+## Used
 
 * Kotlin
 * MySQL
