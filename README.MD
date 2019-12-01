@@ -1,4 +1,4 @@
-# Co2 Monitor
+# Co2Monitor
 
 ## Installation
 1. Install [Backend](https://github.com/beworker/co2monitor/tree/master/backend)
