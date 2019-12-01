@@ -1,6 +1,6 @@
 # Co2monitor Android Application
 
-## User libraries and technologies
+## Used technologies
 
 * Kotlin
 * Multi-modules project
