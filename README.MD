@@ -10,6 +10,6 @@ git clone --recurse-submodules git@github.com:beworker/co2monitor.git
 
 ## Installation
 
-1. Install [Backend](https://github.com/beworker/co2monitor/tree/master/backend)
-2. Install [Sensor Script](https://github.com/beworker/co2monitor/tree/master/sensor)
-3. Install [Android Application](https://github.com/beworker/co2monitor/tree/master/android-client)
+1. Install [Backend](https://github.com/beworker/co2monitor/tree/master/backend) (Kotlin, http4k, GraphQL, MySQL, Kotlin Serialization, Kotlin Exposed)
+2. Install [Sensor Script](https://github.com/beworker/co2monitor/tree/master/sensor) (Python, Raspberry Pi)
+3. Install [Android Application](https://github.com/beworker/co2monitor/tree/master/android-client) (Kotlin, ViewModel, RxJava2, GraphQL, Magnet, Knot)
