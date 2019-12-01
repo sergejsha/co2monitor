@@ -1,4 +1,4 @@
-# Co2monitor backend server
+# Co2Monitor backend server
 
 ## Used technologies
 
