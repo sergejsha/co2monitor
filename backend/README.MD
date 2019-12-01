@@ -1,5 +1,15 @@
 # Co2monitor backend server
 
+## User libraries and technologies
+
+* Kotlin
+* MySQL
+* [http4k server](https://github.com/http4k/http4k)
+* [Moshi JSON library](https://github.com/square/moshi)
+* [GraphQL Java](https://github.com/graphql-java/graphql-java)
+* [Exposed Kotlin SQL Framework](https://github.com/JetBrains/Exposed)
+* [Kotlin Serialization](https://github.com/Kotlin/kotlinx.serialization)
+
 ## Build
 
 ```bash
