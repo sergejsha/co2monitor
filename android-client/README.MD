@@ -12,6 +12,7 @@
 * [Dark and Light themes](https://developer.android.com/guide/topics/ui/look-and-feel/darktheme)
 * [Android ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel)
 * [GraphQL client](https://github.com/apollographql/apollo-android)
+* [RxJava2](https://github.com/ReactiveX/RxJava)
 * [Magnet dependency injection](https://github.com/beworker/magnet)
 * [Knot state container](https://github.com/beworker/knot)
 
