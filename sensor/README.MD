@@ -1,4 +1,4 @@
-# Co2monitor sensor script
+# Co2Monitor sensor script
 
 Simple python script reading CO2 and Temperature values from "TFA Dostmann AirCO2ntrol Mini CO2-Monitor" and posting them to `backend` server.
 
