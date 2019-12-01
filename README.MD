@@ -4,9 +4,7 @@
 
 ## Download
 
-```bash
-git clone --recurse-submodules git@github.com:beworker/co2monitor.git
-```
+`git clone --recurse-submodules git@github.com:beworker/co2monitor.git`
 
 ## Installation
 
