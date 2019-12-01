@@ -1,6 +1,6 @@
 # Co2Monitor
 
-<img width="280" src="https://github.com/beworker/co2monitor/blob/master/android-client/docs/images/screen-1.png" />&nbsp;&nbsp;<img width="280" src="https://github.com/beworker/co2monitor/blob/master/android-client/docs/images/screen-2.png" />
+<img width="280" src="https://github.com/beworker/co2monitor/blob/master/android-client/docs/images/screen-1.png" />&nbsp;&nbsp;<img width="280" src="https://github.com/beworker/co2monitor/blob/master/android-client/docs/images/screen-3.png" />
 
 ## Installation
 1. Install [Backend](https://github.com/beworker/co2monitor/tree/master/backend)
