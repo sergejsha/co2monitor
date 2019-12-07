@@ -73,13 +73,18 @@ private fun createKnot(
             when (change) {
 
                 OnTimeToUpdateMeasurement -> {
+                    val state =
+                        if (isMeasurementInvalid) {
+                            copy(measurement = null, loading = loading.makeVisible())
+                        } else this
+
                     if (shouldUpdateCurrentMeasurement) {
                         val loading =
-                            if (measurement == null) Loading.Visible
+                            if (state.measurement == null) Loading.Visible
                             else Loading.Invisible
 
-                        copy(loading = loading) + Action.LoadMeasurement
-                    } else only
+                        state.copy(loading = loading) + Action.LoadMeasurement
+                    } else state.only
                 }
 
                 is OnLoadingSuccess ->
@@ -129,6 +134,9 @@ private fun createKnot(
     }
 }
 
+private fun Loading.makeVisible(): Loading =
+    if (this == Loading.Invisible) Loading.Visible else this
+
 private val State.isMeasurementInvalid: Boolean
     get() = when (failure) {
         null -> false
@@ -146,9 +154,9 @@ private val State.shouldUpdateCurrentMeasurement: Boolean
             .isBefore(Instant.now())
     }
 
-private const val MEASUREMENT_MIN_VALIDITY_SECS = 10L
-private const val MEASUREMENT_MAX_VALIDITY_SECS = 20L
-private const val MEASUREMENT_REFRESH_SECS = 15L
+private const val MEASUREMENT_MIN_VALIDITY_SECS = 5L
+private const val MEASUREMENT_MAX_VALIDITY_SECS = 15L
+private const val MEASUREMENT_REFRESH_SECS = 10L
 
 private sealed class Action {
     object LoadMeasurement : Action()

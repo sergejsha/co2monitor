@@ -37,4 +37,4 @@ abstract class MagnetApp : Application() {
 
 fun Context.getAppScope(): Scope =
     (applicationContext as? MainApp)?.scope
-        ?: error("AppScope cannot be found in context $this")
+        ?: error("AppScope cannot be found in context $this, applicationContext is $applicationContext")
