@@ -24,6 +24,20 @@
     src: config.yml.j2
     dest: "{{ co2_home_directory }}/config.yml"
 
+- name: Copy udev rules
+  template:
+    src: 90-co2mini.rules.j2
+    dest: /etc/udev/rules.d/90-co2mini.rules
+
+- name: Add user "pi" to "plugdev" group
+  user:
+    name: pi
+    groups: plugdev
+    append: yes
+
+- name: Reload udev rules
+  shell: udevadm trigger
+
 - name: Register co2-monitor service
   template:
     src: co2-monitor.service.j2
