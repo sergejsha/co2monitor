@@ -16,10 +16,13 @@ Prerequisites: Raspberry Pi runs Debian and can be reached via ssh.
 
 ```bash
 # view co2-monitor service logs
-journalctl -e -u co2-monitor.service
+sudo journalctl -e -u co2-monitor.service
 
 # stop co2-monitor service
 sudo systemctl stop co2-monitor
+
+# add user to "plugdev" group
+sudo usermod -G plugdev <user>
 
 # launch script from command line for testing purposes (co2-monitor service must be stopped)
 python co2-monitor/monitor.py /dev/hidraw0
