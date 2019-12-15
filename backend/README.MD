@@ -2,11 +2,11 @@
 
 ## Used
 
-* Kotlin
-* MySQL
-* [http4k server](https://github.com/http4k/http4k)
-* [Moshi JSON library](https://github.com/square/moshi)
+* [Kotlin](https://kotlinlang.org/)
+* [MySQL](https://www.mysql.com/)
+* [Ktor server](https://ktor.io/)
 * [GraphQL Java](https://github.com/graphql-java/graphql-java)
+* [Moshi JSON library](https://github.com/square/moshi)
 * [Exposed Kotlin SQL Framework](https://github.com/JetBrains/Exposed)
 * [Kotlin Serialization](https://github.com/Kotlin/kotlinx.serialization)
 
