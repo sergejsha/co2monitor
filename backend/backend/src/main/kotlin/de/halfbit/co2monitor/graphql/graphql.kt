@@ -17,7 +17,7 @@ import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 import java.time.temporal.TemporalQuery
 
-fun createGraphQL(): GraphQL {
+fun createGraphql(): GraphQL {
 
     val asInstant = TemporalQuery<Instant> { temporal -> Instant.from(temporal) }
     val dateTimeFormatter = DateTimeFormatter.ISO_OFFSET_DATE_TIME.withZone(ZoneId.of("UTC"))

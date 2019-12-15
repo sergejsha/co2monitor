@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "de.halfbit"
-version = "1.2"
+version = "1.3"
 
 repositories {
     mavenCentral()
@@ -16,8 +16,8 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    implementation(Libs.http4kCore)
-    implementation(Libs.http4kNetty)
+    implementation(Libs.ktorServerCore)
+    implementation(Libs.ktorNetty)
 
     implementation(Libs.moshi)
     kapt(Libs.moshiCodegen)

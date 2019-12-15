@@ -7,4 +7,4 @@
     - vars/co2-monitor-backend.yml
   roles:
     - role: mysql
-    #- role: co2-monitor-backend
+    - role: co2-monitor-backend

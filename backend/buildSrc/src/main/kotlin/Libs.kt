@@ -1,13 +1,11 @@
 object Libs {
-    val kotlinVersion = "1.3.60"
+    const val kotlinVersion = "1.3.60"
 
-    private val http4kVersion = "3.196.0"
-    private val moshiVersion = "1.8.0"
+    private const val ktorVersion = "1.3.0-beta-1"
+    private const val moshiVersion = "1.8.0"
 
-    val http4kCore = "org.http4k:http4k-core:$http4kVersion"
-    val http4kUndertow = "org.http4k:http4k-server-undertow:$http4kVersion"
-    val http4kJetty = "org.http4k:http4k-server-jetty:$http4kVersion"
-    val http4kNetty = "org.http4k:http4k-server-netty:$http4kVersion"
+    val ktorServerCore = "io.ktor:ktor-server-core:$ktorVersion"
+    val ktorNetty = "io.ktor:ktor-server-netty:$ktorVersion"
 
     val moshi = "com.squareup.moshi:moshi:$moshiVersion"
     val moshiCodegen = "com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion"

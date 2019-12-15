@@ -1,17 +1,19 @@
 package de.halfbit.co2monitor
 
 import com.charleskorn.kaml.Yaml
+import com.squareup.moshi.Moshi
 import de.halfbit.co2monitor.database.createDatabaseCleaner
-import de.halfbit.co2monitor.web.createGraphqlHandler
+import de.halfbit.co2monitor.graphql.createGraphql
+import graphql.GraphQL
 import kotlinx.serialization.Serializable
-import org.http4k.core.HttpHandler
 import java.io.File
 import java.nio.charset.Charset
 import java.util.*
 
 class Co2Monitor(
     val args: Arguments,
-    val graphqlHandler: HttpHandler,
+    val graphql: GraphQL,
+    val moshi: Moshi,
     val databaseCleaner: Timer
 )
 
@@ -50,7 +52,8 @@ inline fun initialize(block: Co2Monitor.() -> Unit) =
             val args = Yaml.default.parse(Arguments.serializer(), it)
             val app = Co2Monitor(
                 args = args,
-                graphqlHandler = createGraphqlHandler(),
+                graphql = createGraphql(),
+                moshi = Moshi.Builder().build(),
                 databaseCleaner = createDatabaseCleaner(args.database.cleaner)
             )
             block(app)

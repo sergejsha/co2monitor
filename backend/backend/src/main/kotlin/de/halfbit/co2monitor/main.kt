@@ -3,21 +3,20 @@
 package de.halfbit.co2monitor
 
 import de.halfbit.co2monitor.database.initializeDatabase
-import org.http4k.core.Method.POST
-import org.http4k.routing.bind
-import org.http4k.routing.routes
-import org.http4k.server.Netty
-import org.http4k.server.asServer
+import de.halfbit.co2monitor.web.graphql
+import io.ktor.routing.routing
+import io.ktor.server.engine.embeddedServer
+import io.ktor.server.netty.Netty
 
 fun main() {
     initialize {
         initializeDatabase(args.database)
-        routes(
-            "/graphql" bind POST to graphqlHandler
-        ).run {
-            asServer(
-                Netty(port = args.server.port)
-            ).start()
+        embeddedServer(Netty, port = args.server.port) {
+            routing {
+                graphql("/graphql", graphql, moshi)
+            }
+        }.run {
+            start(wait = true)
         }
     }
 }
