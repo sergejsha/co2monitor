@@ -50,6 +50,7 @@ ext {
     deps.threetenabp = "com.jakewharton.threetenabp:threetenabp:$threetenabp_version"
     deps.okhttp = "com.squareup.okhttp3:okhttp:$okhttp_version"
     deps.knot = "de.halfbit:knot:$knot_version"
+    deps.edgetoedge = "de.halfbit:edge-to-edge:0.3"
 
     deps.magnetxApp = "de.halfbit:magnetx-app:$magnet_version"
     deps.magnetxRxJava2Android = "de.halfbit:magnetx-app-rxandroid:$magnet_version"

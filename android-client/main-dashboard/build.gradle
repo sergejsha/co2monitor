@@ -6,4 +6,5 @@ dependencies {
     api project(":commons-network")
     implementation deps.androidxConstraintLayout
     implementation deps.knot
+    implementation deps.edgetoedge
 }

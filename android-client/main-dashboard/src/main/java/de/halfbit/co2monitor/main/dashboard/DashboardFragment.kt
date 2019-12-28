@@ -5,8 +5,8 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import de.halfbit.co2monitor.main.epi.MainFragmentFactory
 import de.halfbit.co2monitor.main.mvi.MviFragment
-import de.halfbit.co2monitor.main.utils.applyInsets
-import de.halfbit.co2monitor.main.utils.consumeInsets
+import de.halfbit.edgetoedge.Edge
+import de.halfbit.edgetoedge.edgeToEdge
 import magnet.Instance
 
 internal class DashboardFragment : MviFragment<DashboardViewModel>() {
@@ -17,7 +17,9 @@ internal class DashboardFragment : MviFragment<DashboardViewModel>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        view.applyInsets { it, insets, padding -> it.consumeInsets(padding, insets) }
+        edgeToEdge {
+            view.fit { Edge.Top + Edge.Bottom }
+        }
     }
 }
 
