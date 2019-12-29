@@ -6,17 +6,16 @@ buildscript {
         android_build_version = '3.5.3'
 
         androidx_appcompat_version = '1.1.0'
-        androidx_constraintlayout_version = '2.0.0-beta2'
+        androidx_constraintlayout_version = '2.0.0-beta4'
         androidx_recycler_version = '1.1.0'
-        androidx_lifecycle_version = '2.2.0-rc02'
+        androidx_lifecycle_version = '2.2.0-rc03'
 
-        rxjava2_version = '2.2.14'
+        rxjava2_version = '2.2.16'
         rxjava2_kotlin_version = '2.4.0'
         rxjava2_android_version = '2.1.1'
 
         google_material_version = '1.1.0-beta02'
         magnet_version = '3.3'
-        knot_version = '1.8.0'
         apollo_graphql_version = "1.2.1"
         okhttp_version = "3.14.4"
         threetenabp_version = "1.2.1"
@@ -49,8 +48,8 @@ ext {
     deps.apolloRuntime = "com.apollographql.apollo:apollo-runtime:$apollo_graphql_version"
     deps.threetenabp = "com.jakewharton.threetenabp:threetenabp:$threetenabp_version"
     deps.okhttp = "com.squareup.okhttp3:okhttp:$okhttp_version"
-    deps.knot = "de.halfbit:knot:$knot_version"
-    deps.edgetoedge = "de.halfbit:edge-to-edge:0.3"
+    deps.knot = "de.halfbit:knot:1.8.0"
+    deps.edgetoedge = "de.halfbit:edge-to-edge:0.4"
 
     deps.magnetxApp = "de.halfbit:magnetx-app:$magnet_version"
     deps.magnetxRxJava2Android = "de.halfbit:magnetx-app-rxandroid:$magnet_version"
