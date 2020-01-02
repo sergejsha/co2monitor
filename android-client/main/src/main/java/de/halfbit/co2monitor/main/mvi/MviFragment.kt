@@ -29,7 +29,7 @@ abstract class MviFragment<V : Any> : MagnetFragment() {
         val retainedViewModel = provider.get(RetainedViewModel::class.java)
         val viewModelInstance = retainedViewModel.scope.getSingle(viewModel.java)
         scope.bind(viewModel.java, viewModelInstance)
-        scope.getSingle(viewBinder.java).attach(this)
+        scope.getSingle(viewBinder.java).attach(viewLifecycleOwner)
     }
 }
 
