@@ -112,9 +112,11 @@ private fun createKnot(
 
     actions {
         perform<Action.LoadMeasurement> {
-            switchMapSingle { repository.getCurrentMeasurement() }
-                .map<Change> { OnLoadingSuccess(it) }
-                .onErrorReturn { OnLoadingFailure(it) }
+            switchMapSingle {
+                repository.getCurrentMeasurement()
+                    .map<Change> { OnLoadingSuccess(it) }
+                    .onErrorReturn { OnLoadingFailure(it) }
+            }
         }
     }
 

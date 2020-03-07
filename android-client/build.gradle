@@ -48,7 +48,7 @@ ext {
     deps.apolloRuntime = "com.apollographql.apollo:apollo-runtime:$apollo_graphql_version"
     deps.threetenabp = "com.jakewharton.threetenabp:threetenabp:$threetenabp_version"
     deps.okhttp = "com.squareup.okhttp3:okhttp:$okhttp_version"
-    deps.knot = "de.halfbit:knot3:3.0.2"
+    deps.knot = "de.halfbit:knot3:3.0.3"
     deps.edgetoedge = "de.halfbit:edge-to-edge:0.8"
 
     deps.magnetxApp = "de.halfbit:magnetx-app:$magnet_version"
