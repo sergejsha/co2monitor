@@ -5,7 +5,7 @@ import android.net.ConnectivityManager
 import android.net.Network
 import android.net.NetworkRequest
 import de.halfbit.co2monitor.commons.APPLICATION
-import io.reactivex.Observable
+import io.reactivex.rxjava3.core.Observable
 import magnet.Classifier
 import magnet.Instance
 

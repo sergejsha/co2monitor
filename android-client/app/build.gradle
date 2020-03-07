@@ -42,6 +42,6 @@ dependencies {
     implementation project(':repo-measurement-graphql')
 
     // assemble all application extensions here
-    implementation deps.magnetxRxJava2Android
-    implementation deps.rxjava2Android
+    implementation deps.magnetxRxJava3Android
+    implementation deps.rxjava3Android
 }

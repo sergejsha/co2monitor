@@ -37,8 +37,8 @@ dependencies {
     implementation deps.kotlinStdlib
     implementation deps.googleMaterial
     implementation deps.androidxAppcompat
-    implementation deps.rxjava2Kotlin
-    implementation deps.rxjava2Android
+    implementation deps.rxjava3Kotlin
+    implementation deps.rxjava3Android
     implementation deps.threetenabp
 
     implementation deps.magnet

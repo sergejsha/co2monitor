@@ -7,12 +7,12 @@ import de.halfbit.co2monitor.commons.stringRef
 import de.halfbit.co2monitor.main.mvi.RETAINED
 import de.halfbit.co2monitor.repo.measurement.Measurement
 import de.halfbit.co2monitor.repo.measurement.MeasurementRepository
-import de.halfbit.knot.Knot
-import de.halfbit.knot.knot
-import io.reactivex.Observable
-import io.reactivex.Scheduler
-import io.reactivex.functions.Consumer
-import io.reactivex.schedulers.Schedulers
+import de.halfbit.knot3.Knot
+import de.halfbit.knot3.knot
+import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.core.Scheduler
+import io.reactivex.rxjava3.functions.Consumer
+import io.reactivex.rxjava3.schedulers.Schedulers
 import magnet.Instance
 import org.threeten.bp.Instant
 import java.io.IOException
@@ -112,12 +112,9 @@ private fun createKnot(
 
     actions {
         perform<Action.LoadMeasurement> {
-            switchMapSingle {
-                repository
-                    .getCurrentMeasurement()
-                    .map<Change> { OnLoadingSuccess(it) }
-                    .onErrorReturn { OnLoadingFailure(it) }
-            }
+            switchMapSingle { repository.getCurrentMeasurement() }
+                .map<Change> { OnLoadingSuccess(it) }
+                .onErrorReturn { OnLoadingFailure(it) }
         }
     }
 
@@ -125,7 +122,7 @@ private fun createKnot(
         coldSource {
             Observable
                 .interval(0L, MEASUREMENT_REFRESH_SECS, TimeUnit.SECONDS, timerScheduler)
-                .map<Change> { OnTimeToUpdateMeasurement }
+                .map { OnTimeToUpdateMeasurement }
         }
         coldSource {
             networkObserver.networkAvailable

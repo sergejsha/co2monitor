@@ -4,7 +4,7 @@ import de.halfbit.co2monitor.commons.None
 import de.halfbit.co2monitor.commons.toOption
 import de.halfbit.co2monitor.main.mvi.LifecycleViewBinder
 import de.halfbit.co2monitor.main.mvi.ViewBinder
-import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.rxjava3.disposables.CompositeDisposable
 import magnet.Instance
 
 interface DashboardViewBinder : ViewBinder

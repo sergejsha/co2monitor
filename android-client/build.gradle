@@ -1,22 +1,22 @@
 buildscript {
-    ext.kotlin_version = '1.3.61'
+    ext.kotlin_version = '1.3.70'
 
     ext {
-        kotlin_version = '1.3.61'
-        android_build_version = '3.5.3'
+        kotlin_version = '1.3.70'
+        android_build_version = '3.6.1'
 
         androidx_appcompat_version = '1.1.0'
         androidx_constraintlayout_version = '2.0.0-beta4'
         androidx_recycler_version = '1.1.0'
-        androidx_lifecycle_version = '2.2.0-rc03'
+        androidx_lifecycle_version = '2.2.0'
 
-        rxjava2_version = '2.2.16'
-        rxjava2_kotlin_version = '2.4.0'
-        rxjava2_android_version = '2.1.1'
+        rxjava3_version = '3.0.0'
+        rxjava3_kotlin_version = '3.0.0-RC1'
+        rxjava3_android_version = '3.0.0'
 
-        google_material_version = '1.1.0-beta02'
-        magnet_version = '3.3'
-        apollo_graphql_version = "1.2.1"
+        google_material_version = '1.1.0-rc02'
+        magnet_version = '3.4-rc2'
+        apollo_graphql_version = "1.3.2"
         okhttp_version = "3.14.4"
         threetenabp_version = "1.2.1"
     }
@@ -48,11 +48,11 @@ ext {
     deps.apolloRuntime = "com.apollographql.apollo:apollo-runtime:$apollo_graphql_version"
     deps.threetenabp = "com.jakewharton.threetenabp:threetenabp:$threetenabp_version"
     deps.okhttp = "com.squareup.okhttp3:okhttp:$okhttp_version"
-    deps.knot = "de.halfbit:knot:1.8.0"
-    deps.edgetoedge = "de.halfbit:edge-to-edge:0.6"
+    deps.knot = "de.halfbit:knot3:3.0.2"
+    deps.edgetoedge = "de.halfbit:edge-to-edge:0.8"
 
     deps.magnetxApp = "de.halfbit:magnetx-app:$magnet_version"
-    deps.magnetxRxJava2Android = "de.halfbit:magnetx-app-rxandroid:$magnet_version"
+    deps.magnetxRxJava3Android = "de.halfbit:magnetx-app-rx3android:$magnet_version"
     deps.magnet = "de.halfbit:magnet-kotlin:$magnet_version"
     deps.magnetProcessor = "de.halfbit:magnet-processor:$magnet_version"
 
@@ -61,9 +61,9 @@ ext {
     deps.androidxRecycler = "androidx.recyclerview:recyclerview:$androidx_recycler_version"
     deps.androidxLifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel:$androidx_lifecycle_version"
 
-    deps.rxjava2 = "io.reactivex.rxjava2:rxjava:$rxjava2_version"
-    deps.rxjava2Kotlin = "io.reactivex.rxjava2:rxkotlin:$rxjava2_kotlin_version"
-    deps.rxjava2Android = "io.reactivex.rxjava2:rxandroid:$rxjava2_android_version"
+    deps.rxjava3 = "io.reactivex.rxjava3:rxjava:$rxjava3_version"
+    deps.rxjava3Kotlin = "io.reactivex.rxjava3:rxkotlin:$rxjava3_kotlin_version"
+    deps.rxjava3Android = "io.reactivex.rxjava3:rxandroid:$rxjava3_android_version"
 }
 
 allprojects {

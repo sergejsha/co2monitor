@@ -1,5 +1,5 @@
 apply from: '../build-module-android.gradle'
-apply plugin: 'com.apollographql.android'
+apply plugin: 'com.apollographql.apollo'
 
 apollo {
     generateKotlinModels = true

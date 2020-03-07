@@ -1,7 +1,7 @@
 package de.halfbit.co2monitor.repo.measurement
 
 import de.halfbit.co2monitor.commons.Option
-import io.reactivex.Single
+import io.reactivex.rxjava3.core.Single
 import org.threeten.bp.Instant
 
 interface MeasurementRepository {

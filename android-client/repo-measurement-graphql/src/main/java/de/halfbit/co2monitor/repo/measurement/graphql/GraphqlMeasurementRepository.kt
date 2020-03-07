@@ -9,9 +9,9 @@ import de.halfbit.co2monitor.commons.toOption
 import de.halfbit.co2monitor.main.dashboard.graphql.MeasurementQuery
 import de.halfbit.co2monitor.repo.measurement.Measurement
 import de.halfbit.co2monitor.repo.measurement.MeasurementRepository
-import io.reactivex.Single
-import io.reactivex.SingleEmitter
-import io.reactivex.schedulers.Schedulers
+import io.reactivex.rxjava3.core.Single
+import io.reactivex.rxjava3.core.SingleEmitter
+import io.reactivex.rxjava3.schedulers.Schedulers
 import magnet.Instance
 import okhttp3.Call
 import okhttp3.OkHttpClient

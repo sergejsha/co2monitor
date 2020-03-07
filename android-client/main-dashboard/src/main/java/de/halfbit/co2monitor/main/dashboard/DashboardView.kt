@@ -11,7 +11,7 @@ import androidx.annotation.AttrRes
 import androidx.annotation.ColorInt
 import de.halfbit.co2monitor.commons.Option
 import de.halfbit.co2monitor.commons.StringRef
-import io.reactivex.functions.Consumer
+import io.reactivex.rxjava3.functions.Consumer
 import magnet.Instance
 
 
