@@ -35,7 +35,7 @@ Prerequisites: Server (e.g. a Raspberry Pi) runs Debian and can be reached via s
 ssh-copy-id -i ~/.ssh/id_rsa.pub pi@raspberrypi
 
 # view service logs
-journalctl -e -u co2-monitor-backend.service
+sudo journalctl -e -u co2-monitor-backend.service
 
 # restart service
 sudo systemctl restart co2-monitor-backend
