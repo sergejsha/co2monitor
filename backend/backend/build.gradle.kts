@@ -6,9 +6,8 @@ plugins {
     id("org.gradle.application")
     kotlin("jvm") version Libs.kotlinVersion
     kotlin("kapt") version Libs.kotlinVersion
-    id("org.jetbrains.kotlin.plugin.serialization") version Libs.kotlinVersion
     id(Libs.sqldelightPlugin) version Libs.sqldelightVersion
-    id(Libs.fatJarPlugin) version Libs.fatJarPluginVersion
+    id(Libs.shadowJarPlugin) version Libs.shadowJarPluginVersion
 }
 
 group = "de.halfbit"
@@ -32,7 +31,7 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
     implementation(Libs.ktorServerCore)
-    implementation(Libs.ktorJetty)
+    implementation(Libs.ktorNetty)
 
     implementation(Libs.moshi)
     kapt(Libs.moshiCodegen)
@@ -41,8 +40,6 @@ dependencies {
     implementation(Libs.loggerSimple)
 
     implementation(Libs.sqliteDriver)
-    implementation(Libs.kaml)
-    implementation(Libs.kotlinxSerialization)
 }
 
 tasks.withType<KotlinCompile> {

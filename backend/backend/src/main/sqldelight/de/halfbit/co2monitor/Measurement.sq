@@ -23,3 +23,7 @@ WHERE Measurement.time = ?;
 insert:
 INSERT INTO Measurement (time, temperature, co2)
 VALUES (?, ?, ?);
+
+deleteOlderThan:
+DELETE FROM Measurement
+WHERE time < ?;

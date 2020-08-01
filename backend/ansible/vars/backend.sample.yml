@@ -1,4 +1,4 @@
 ---
 
-co2_backend_home: /home/pi/co2-monitor-backend
-co2_backend_version: 2.0
+home_path: /home/pi/co2-monitor/backend
+version: 2.0

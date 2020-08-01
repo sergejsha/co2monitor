@@ -25,5 +25,5 @@ sudo systemctl stop co2-monitor
 sudo usermod -G plugdev <user>
 
 # launch script from command line for testing purposes (co2-monitor service must be stopped)
-python co2-monitor/monitor.py /dev/hidraw0
+python /home/pi/co2-monitor/sensor/monitor.py /dev/hidraw0
 ```

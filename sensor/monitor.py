@@ -80,7 +80,7 @@ if __name__ == "__main__":
 
                 co2_seen = co2
                 temperature_seen = temperature
-                time = datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%SZ')
+                time = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
 
                 try:
                     status_code = publisher.publish(time, temperature, co2, publish_server_url)

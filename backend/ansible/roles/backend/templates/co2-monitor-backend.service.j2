@@ -3,8 +3,8 @@ Description=co2-monitor-backend service
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/java -jar {{ co2_backend_home }}/backend.jar -Xmx196m -Xms128m
-WorkingDirectory={{ co2_backend_home }}
+ExecStart=/usr/bin/java -jar {{ home_path }}/app/backend-shadow-{{ version }}/lib/backend-{{ version }}-all.jar -Xmx206m -Xms156m
+WorkingDirectory={{ home_path }}
 StandardOutput=syslog
 StandardError=syslog
 Restart=always

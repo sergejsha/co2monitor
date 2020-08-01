@@ -64,7 +64,7 @@ internal fun provideOkHttpClient(): OkHttpClient = OkHttpClient.Builder()
 internal fun provideApolloClient(httpClient: OkHttpClient): ApolloClient =
     ApolloClient
         .builder()
-        .serverUrl("http://192.168.178.28:8081/graphql")
+        .serverUrl("http://192.168.178.28:8080/graphql")
         .callFactory(
             object : Call.Factory {
                 override fun newCall(request: Request): Call =

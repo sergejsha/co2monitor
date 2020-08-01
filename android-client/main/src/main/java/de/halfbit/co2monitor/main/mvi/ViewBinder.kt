@@ -7,7 +7,7 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.functions.Consumer
-import io.reactivex.rxkotlin3.plusAssign
+import io.reactivex.rxjava3.kotlin.plusAssign
 
 interface ViewBinder {
     fun bind(disposables: CompositeDisposable)

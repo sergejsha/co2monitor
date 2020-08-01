@@ -5,6 +5,7 @@ import de.halfbit.co2monitor.domain.Measurement
 import graphql.schema.DataFetcher
 import graphql.schema.DataFetchingEnvironment
 import java.time.Instant
+import java.time.temporal.ChronoUnit
 
 internal class CreateMeasurementFetcher(
     private val database: Co2Database
@@ -19,7 +20,12 @@ internal class CreateMeasurementFetcher(
 
         val id: Int = database.transactionWithResult {
             database.measurementQueries.insert(time, temperature, co2)
-            database.measurementQueries.selectIdByTime(time).executeAsOne()
+            val id = database.measurementQueries.selectIdByTime(time).executeAsOne()
+
+            val threshold = Instant.now().minus(2L, ChronoUnit.DAYS)
+            database.measurementQueries.deleteOlderThan(threshold)
+
+            id
         }
 
         return Measurement(id, time, temperature, co2)
