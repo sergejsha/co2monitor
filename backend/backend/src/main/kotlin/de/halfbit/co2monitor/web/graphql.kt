@@ -12,7 +12,11 @@ import io.ktor.routing.post
 import io.ktor.routing.route
 import io.ktor.util.pipeline.PipelineContext
 
-internal fun Route.graphql(path: String, graphql: GraphQL, moshi: Moshi): Route {
+internal fun Route.graphql(
+    path: String,
+    graphql: GraphQL,
+    moshi: Moshi = Moshi.Builder().build()
+): Route {
 
     val requestAdapter = moshi.adapter(GraphqlRequest::class.java)
     val responseAdapter = moshi.adapter(Map::class.java)

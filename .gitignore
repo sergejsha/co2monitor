@@ -1,4 +1,5 @@
 sensor/ansible/vars/co2-monitor.yml
+backend/ansible/vars/co2-monitor-user.yml
 backend/ansible/vars/co2-monitor-backend.yml
 backend/ansible/vars/co2-monitor-mysql.yml
 backend/data/co2monitor.yml
@@ -17,3 +18,4 @@ __pycache__/
 inventory
 
 local.properties
+data/co2monitor.db

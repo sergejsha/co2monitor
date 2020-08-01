@@ -1,5 +1,6 @@
 package de.halfbit.co2monitor.graphql
 
+import de.halfbit.co2monitor.Co2Database
 import de.halfbit.co2monitor.graphql.fetchers.CreateMeasurementFetcher
 import de.halfbit.co2monitor.graphql.fetchers.CurrentMeasurementFetcher
 import graphql.GraphQL
@@ -17,7 +18,7 @@ import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 import java.time.temporal.TemporalQuery
 
-fun createGraphql(): GraphQL {
+fun createGraphql(database: Co2Database): GraphQL {
 
     val asInstant = TemporalQuery<Instant> { temporal -> Instant.from(temporal) }
     val dateTimeFormatter = DateTimeFormatter.ISO_OFFSET_DATE_TIME.withZone(ZoneId.of("UTC"))
@@ -54,13 +55,13 @@ fun createGraphql(): GraphQL {
         .type(
             TypeRuntimeWiring
                 .newTypeWiring("Query")
-                .dataFetcher("current", CurrentMeasurementFetcher)
+                .dataFetcher("current", CurrentMeasurementFetcher(database))
                 .build()
         )
         .type(
             TypeRuntimeWiring
                 .newTypeWiring("Mutation")
-                .dataFetcher("createMeasurement", CreateMeasurementFetcher)
+                .dataFetcher("createMeasurement", CreateMeasurementFetcher(database))
                 .build()
         )
         .build()

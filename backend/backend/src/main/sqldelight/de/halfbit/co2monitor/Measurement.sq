@@ -1,0 +1,25 @@
+import java.time.Instant;
+
+CREATE TABLE IF NOT EXISTS Measurement (
+  id INTEGER as Int PRIMARY KEY AUTOINCREMENT,
+  time INTEGER as Instant NOT NULL,
+  temperature INTEGER as Int NOT NULL,
+  co2 INTEGER as Int NOT NULL
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS Measurement_time ON Measurement(time);
+CREATE INDEX IF NOT EXISTS Measurement_temperature ON Measurement(temperature);
+CREATE INDEX IF NOT EXISTS Measurement_co2 ON Measurement(co2);
+
+selectMostCurrent:
+SELECT Measurement.* FROM Measurement
+ORDER BY time DESC
+LIMIT 1 OFFSET 0;
+
+selectIdByTime:
+SELECT Measurement.id FROM Measurement
+WHERE Measurement.time = ?;
+
+insert:
+INSERT INTO Measurement (time, temperature, co2)
+VALUES (?, ?, ?);

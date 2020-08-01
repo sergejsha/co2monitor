@@ -1,0 +1,24 @@
+---
+
+- name: "Create {{ co2_backend_home }}"
+  file: path={{ co2_backend_home }}/app state=directory owner=pi
+
+- name: "Create {{ co2_backend_home }}"
+  file: path={{ co2_backend_home }}/data state=directory owner=pi
+
+- name: "Extract ../backend/distributions/backend-shadow-{{ co2_backend_version }}.zip into {{ co2_backend_home }}/app"
+  unarchive:
+    src: ../backend/distributions/backend-shadow-{{ co2_backend_version }}.zip
+    dest: {{ co2_backend_home }}/app owner=pi mode="u+x"
+
+#- name: "Create {{ co2_backend_home }}/data"
+#  file: path={{ co2_backend_home }}/data state=directory owner=pi
+
+#
+#- name: "Register co2-monitor-backend service"
+#  template:
+#    src: co2-monitor-backend.service.j2
+#    dest: /lib/systemd/system/co2-monitor-backend.service
+
+#- name: "Enable and restart co2-monitor-backend service"
+#  service: name=co2-monitor-backend daemon_reload=yes state=restarted enabled=yes

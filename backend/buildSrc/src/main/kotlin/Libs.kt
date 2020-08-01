@@ -5,7 +5,7 @@ object Libs {
     private const val moshiVersion = "1.8.0"
 
     val ktorServerCore = "io.ktor:ktor-server-core:$ktorVersion"
-    val ktorNetty = "io.ktor:ktor-server-netty:$ktorVersion"
+    val ktorJetty = "io.ktor:ktor-server-jetty:$ktorVersion"
 
     val moshi = "com.squareup.moshi:moshi:$moshiVersion"
     val moshiCodegen = "com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion"
@@ -13,8 +13,12 @@ object Libs {
     val graphQlJava = "com.graphql-java:graphql-java:13.0"
     val loggerSimple = "org.slf4j:slf4j-simple:1.7.29"
 
-    val mysql = "mysql:mysql-connector-java:8.0.18"
-    val exposed = "org.jetbrains.exposed:exposed:0.17.7"
+    const val sqldelightVersion = "1.4.0"
+    const val sqldelightPlugin = "com.squareup.sqldelight"
+    val sqliteDriver = "com.squareup.sqldelight:sqlite-driver:$sqldelightVersion"
+
+    const val fatJarPlugin = "com.github.johnrengelman.shadow"
+    const val fatJarPluginVersion = "5.0.0"
 
     val kaml = "com.charleskorn.kaml:kaml:0.15.0"
     val kotlinxSerialization = "org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.14.0"

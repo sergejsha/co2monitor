@@ -1,4 +1,4 @@
 ---
 
 co2_backend_home: /home/pi/co2-monitor-backend
-co2_backend_jar: backend-1.2-release.jar
+co2_backend_version: 2.0

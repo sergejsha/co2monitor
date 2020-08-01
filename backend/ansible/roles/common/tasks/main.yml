@@ -1,0 +1,7 @@
+---
+
+- name: "Install aptitude"
+  apt: pkg=aptitude state=present update_cache=yes
+
+- name: "Install java8"
+  apt: pkg=openjdk-8-jre-headless state=present

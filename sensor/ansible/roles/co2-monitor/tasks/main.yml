@@ -10,19 +10,19 @@
       - requests
       - pyyaml
 
-- name: Create {{ co2_home_directory }}
-  file: path={{ co2_home_directory }} state=directory owner=pi
+- name: Create {{ home_path }}
+  file: path={{ home_path }} state=directory owner=pi
 
 - name: Copy monitor.py to raspberry pi
-  copy: src=../monitor.py dest={{ co2_home_directory }}/monitor.py owner=pi mode="u+x"
+  copy: src=../monitor.py dest={{ home_path }}/monitor.py owner=pi mode="u+x"
 
 - name: Copy publish.py to raspberry pi
-  copy: src=../publisher.py dest={{ co2_home_directory }}/publisher.py owner=pi mode="u+x"
+  copy: src=../publisher.py dest={{ home_path }}/publisher.py owner=pi mode="u+x"
 
 - name: Copy script configuration
   template:
     src: config.yml.j2
-    dest: "{{ co2_home_directory }}/config.yml"
+    dest: "{{ home_path }}/config.yml"
 
 - name: Copy udev rules
   template:

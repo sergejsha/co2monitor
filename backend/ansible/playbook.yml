@@ -2,9 +2,9 @@
 
 - hosts: raspberrypi
   become: true
-  vars_files:
-    - vars/co2-monitor-mysql.yml
-    - vars/co2-monitor-backend.yml
+#  vars_files:
+#    - vars/co2-monitor-user.yml
+#    - vars/co2-monitor-backend.yml
   roles:
-    - role: mysql
-    - role: co2-monitor-backend
+    - role: common
+    - role: backend
