@@ -47,6 +47,6 @@ sudo systemctl daemon-reload
 scp pi@raspberrypi:/home/pi/co2-monitor/backend/data/co2monitor.db ~/Downloads
 
 # disable swap file
-dphys-swapfile swapoff
+sudo dphys-swapfile swapoff
 sudo swapoff -a
 ```
