@@ -40,6 +40,7 @@ dependencies {
     // assemble all feature modules here
     implementation project(':main-dashboard')
     implementation project(':repo-measurement-graphql')
+    implementation project(':features:dashboard:backend')
 
     // assemble all application extensions here
     implementation deps.magnetxRxJava3Android

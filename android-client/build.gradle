@@ -1,9 +1,9 @@
 buildscript {
-    ext.kotlin_version = '1.3.72'
-
     ext {
-        kotlin_version = '1.3.72'
-        android_build_version = '3.6.1'
+        kotlin_version = '1.4.21'
+        kotlin_coroutines_version = '1.4.2'
+        kotlin_datetime_version = '0.1.1'
+        android_build_version = '4.1.1'
 
         androidx_appcompat_version = '1.1.0'
         androidx_constraintlayout_version = '2.0.0-beta4'
@@ -16,7 +16,7 @@ buildscript {
 
         google_material_version = '1.1.0-rc02'
         magnet_version = '3.4'
-        apollo_graphql_version = "1.3.2"
+        apollo_graphql_version = "2.4.6"
         okhttp_version = "3.14.4"
         threetenabp_version = "1.2.1"
     }
@@ -44,8 +44,11 @@ ext {
 
     deps = [:]
     deps.kotlinStdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    deps.kotlinCoroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines_version"
+    deps.kotlinxDatetime = "org.jetbrains.kotlinx:kotlinx-datetime:$kotlin_datetime_version"
     deps.googleMaterial = "com.google.android.material:material:$google_material_version"
     deps.apolloRuntime = "com.apollographql.apollo:apollo-runtime:$apollo_graphql_version"
+    deps.apolloCoroutines = "com.apollographql.apollo:apollo-coroutines-support:$apollo_graphql_version"
     deps.threetenabp = "com.jakewharton.threetenabp:threetenabp:$threetenabp_version"
     deps.okhttp = "com.squareup.okhttp3:okhttp:$okhttp_version"
     deps.knot = "de.halfbit:knot3:3.1.1"
@@ -72,6 +75,7 @@ allprojects {
         mavenCentral()
         mavenLocal()
         jcenter()
+        maven { url = "https://kotlin.bintray.com/kotlinx/" }
     }
 }
 

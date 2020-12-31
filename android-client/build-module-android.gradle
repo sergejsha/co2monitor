@@ -35,6 +35,8 @@ dependencies {
     if (project.name != "commons") implementation project(":commons")
 
     implementation deps.kotlinStdlib
+    implementation deps.kotlinCoroutines
+    implementation deps.kotlinxDatetime
     implementation deps.googleMaterial
     implementation deps.androidxAppcompat
     implementation deps.rxjava3Kotlin

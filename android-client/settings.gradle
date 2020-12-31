@@ -5,4 +5,5 @@ include ':app',
         ':main',
         ':main-dashboard',
         ':repo-measurement',
-        ':repo-measurement-graphql'
+        ':repo-measurement-graphql',
+        ':features:dashboard:backend'

@@ -1,0 +1,12 @@
+apply from: "${project.rootDir}/build-module-android.gradle"
+apply plugin: 'com.apollographql.apollo'
+
+apollo {
+    generateKotlinModels = true
+    customTypeMapping = ["DateTime": "kotlinx.datetime.Instant"]
+}
+
+dependencies {
+    implementation deps.apolloRuntime
+    implementation deps.okhttp
+}

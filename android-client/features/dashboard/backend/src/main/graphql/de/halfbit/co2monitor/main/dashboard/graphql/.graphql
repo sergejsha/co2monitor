@@ -1,0 +1,8 @@
+query Measurement {
+  current {
+    id
+    time
+    temperature
+    co2
+  }
+}
