@@ -51,8 +51,8 @@ if __name__ == "__main__":
     with open(script_base_dir + "config.yml", 'r') as ymlfile:
         config = yaml.full_load(ymlfile)
         publish_server_url = config["publish_server_url"]
-        publish_mqtt_server = config["publish_mqtt_server"]
-        publish_mqtt_port = config["publish_mqtt_port"]
+        publish_mqtt_server = config.get("publish_mqtt_server")
+        publish_mqtt_port = config.get("publish_mqtt_port")
 
     key = [0xc4, 0xc6, 0xc0, 0x92, 0x40, 0x23, 0xdc, 0x96]
     fp = open(sys.argv[1], "a+b",  0)
@@ -86,8 +86,8 @@ if __name__ == "__main__":
                 time = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
 
                 try:
-                    #if (publish_mqtt_server is not None) and (publish_mqtt_port is not None):
-                    #    publisher_mqtt.publish_mqtt(time, temperature, co2, publish_mqtt_server, publish_mqtt_port)
+                    if publish_mqtt_server and publish_mqtt_port:
+                        publisher_mqtt.publish_mqtt(time, temperature, co2, publish_mqtt_server, publish_mqtt_port)
 
                     status_code = publisher.publish(time, temperature, co2, publish_server_url)
                     print("[%s] %ippm, %3.1fc, /%s" % (time, co2, temperature, status_code))

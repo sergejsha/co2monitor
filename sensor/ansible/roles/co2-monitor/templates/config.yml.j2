@@ -1,5 +1,9 @@
 ---
 
 publish_server_url: {{ publish_server_url }}
+{% if publish_mqtt_server is defined %}
 publish_mqtt_server: {{ publish_mqtt_server }}
+{% endif %}
+{% if publish_mqtt_port is defined %}
 publish_mqtt_port: {{ publish_mqtt_port }}
+{% endif %}
