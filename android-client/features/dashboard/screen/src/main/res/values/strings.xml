@@ -1,0 +1,7 @@
+<resources>
+    <string name="living_room">Living Room</string>
+    <string name="co2_title">CO2 | ppm</string>
+    <string name="temperature_title">Temperature | °C</string>
+    <string name="error_no_network">Cannot connect to server.</string>
+    <string name="error_generic">Oops, something went wrong. </string>
+</resources>

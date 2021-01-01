@@ -38,9 +38,10 @@ dependencies {
     kapt deps.magnetProcessor
 
     // assemble all feature modules here
-    implementation project(':main-dashboard')
-    implementation project(':repo-measurement-graphql')
+    //implementation project(':main-dashboard')
+    //implementation project(':repo-measurement-graphql')
     implementation project(':features:dashboard:backend')
+    implementation project(':features:dashboard:screen')
 
     // assemble all application extensions here
     implementation deps.magnetxRxJava3Android

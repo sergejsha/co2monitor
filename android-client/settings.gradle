@@ -3,7 +3,8 @@ include ':app',
         ':commons',
         ':commons-network',
         ':main',
-        ':main-dashboard',
-        ':repo-measurement',
-        ':repo-measurement-graphql',
-        ':features:dashboard:backend'
+        //':main-dashboard',
+        //':repo-measurement',
+        //':repo-measurement-graphql',
+        ':features:dashboard:backend',
+        ':features:dashboard:screen'

@@ -17,5 +17,4 @@ fun main() = runBlocking {
     recentMeasurements.observe().collect {
         println("collected: $it")
     }
-    println("done!")
 }

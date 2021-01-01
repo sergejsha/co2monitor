@@ -1,0 +1,8 @@
+apply from: "${project.rootDir}/build-module-android.gradle"
+
+dependencies {
+    api project(":main")
+    api project(":features:dashboard:backend")
+    implementation deps.androidxConstraintLayout
+    implementation deps.edgetoedge
+}
