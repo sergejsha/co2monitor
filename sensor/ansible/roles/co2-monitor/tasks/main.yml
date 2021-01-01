@@ -9,6 +9,7 @@
     name: 
       - requests
       - pyyaml
+      - paho-mqtt
 
 - name: Create {{ home_path }}
   file: path={{ home_path }} state=directory owner=pi
@@ -18,6 +19,9 @@
 
 - name: Copy publish.py to raspberry pi
   copy: src=../publisher.py dest={{ home_path }}/publisher.py owner=pi mode="u+x"
+
+- name: Copy publisher_mqtt.py to raspberry pi
+  copy: src=../publisher_mqtt.py dest={{ home_path }}/publisher_mqtt.py owner=pi mode="u+x"
 
 - name: Copy script configuration
   template:
