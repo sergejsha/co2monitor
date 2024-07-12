@@ -1,3 +1,5 @@
+![maintenance-status](https://img.shields.io/badge/maintenance-experimental-blue.svg)
+
 # Co2Monitor 
 
 <img src="https://github.com/beworker/co2monitor/blob/master/docs/overview-diagram.png" />
